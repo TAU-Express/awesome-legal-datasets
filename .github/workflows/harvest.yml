@@ -1,0 +1,54 @@
+name: Harvest new legal datasets
+
+on:
+  schedule:
+    - cron: "0 6 * * 1-5"   # weekdays, 06:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: harvest-datasets
+  cancel-in-progress: false
+
+jobs:
+  harvest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          claude_args: "--max-turns 8"
+          prompt: |
+            You are updating this "awesome-legal-datasets" list.
+
+            Task: find legal/legaltech NLP datasets not already listed in the
+            "Datasets" table in README.md, and add them.
+
+            Sourcing rules (non-negotiable):
+            - Use only the Semantic Scholar API, Crossref API, and arXiv API for any
+              paper/citation lookups needed to identify or describe a dataset.
+            - Do NOT scrape Google Scholar. Do NOT use Sci-Hub. If you use any
+              third-party tool/library that bundles those as a code path, only call
+              its Semantic Scholar/Crossref/arXiv functions.
+            - You may check other public "awesome-*-legal-*" style GitHub lists for
+              dataset names you're missing, but every entry you add here must still
+              be independently verified (working source link, actual license) before
+              you add it — do not copy an entry you haven't verified yourself.
+
+            Content rules:
+            - For each new dataset, add one row: Name, Jurisdiction, Task, License,
+              Source (a working URL). If the license is unclear, write "unclear —
+              needs review" rather than guessing or omitting the dataset.
+            - Do not remove or edit existing rows.
+            - Do not touch any file other than README.md.
+            - Keep the diff small and reviewable — this runs on a schedule, so it's
+              fine to add just a few entries per run rather than trying to be
+              exhaustive in one pass.
+
+            Open a pull request with your changes. Do not merge it yourself.
