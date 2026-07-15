@@ -89,7 +89,7 @@ Part of the [ACE-EXP](https://github.com/TAU-Express/ace-exp) legal-AI evaluatio
 
 ## Sources & Acknowledgments
 
-Entries in this list were seeded in part from:
+This list is currently seeded from `Legal_NLP_Resource_Catalog.xlsx`. The following upstream lists have been forked as sources for further research and will be credited for specific entries as they're mined in:
 
 - [maastrichtlawtech/awesome-legal-nlp](https://github.com/maastrichtlawtech/awesome-legal-nlp)
 - [CSHaitao/Awesome-LegalAI-Resources](https://github.com/CSHaitao/Awesome-LegalAI-Resources)
