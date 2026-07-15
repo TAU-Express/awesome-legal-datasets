@@ -52,6 +52,39 @@ Part of the [ACE-EXP](https://github.com/TAU-Express/ace-exp) legal-AI evaluatio
 | CivilSum | India; English | Abstractive summarization of SC/HC decisions | Not confirmed | https://github.com/ra-MANUJ-an/CivilSum |
 | SLDS (Swiss Landmark) | Switzerland; DE/FR/IT | Ruling -> headnote (DE/FR/IT) | CC-BY-4.0 (arXiv-stated) | https://arxiv.org/abs/2410.13456 |
 | MultiLegalPile | 17 jurisdictions; 24 languages | Multilingual pretraining corpus (not a labeled benchmark) | Mixed (per source) | https://huggingface.co/datasets/joelniklaus/MultiLegalPile |
+| LexGLUE | US + EU/ECtHR; English | 7 English legal NLU tasks (classification + MCQ) | CC-BY-4.0 | https://huggingface.co/datasets/coastalcph/lex_glue |
+| LEXTREME | EU + national; 24 languages | 11 datasets / 18 configs; classification + NER | CC-BY-4.0 (mixed subsets) | https://huggingface.co/datasets/joelniklaus/lextreme |
+| LegalBench | Predominantly US; English | 162 tasks; 6 reasoning types (IRAC) | CC-BY-4.0 (mixed task licenses) | https://huggingface.co/datasets/nguha/legalbench |
+| LawBench | China; Chinese | 20 tasks; 3 cognitive tiers | Apache-2.0 | https://github.com/open-compass/LawBench |
+| LAiW | China; Chinese | 14 tasks; 3 ability levels (BIR/LFI/CLA) | Not confirmed | https://github.com/Dai-shen/LAiW |
+| LexEval | China; Chinese | 23 tasks; LexCog cognitive taxonomy (6 abilities) | MIT | https://huggingface.co/datasets/CSHaitao/LexEval |
+| IL-TUR | India; English/Hindi + 9 langs | 8 tasks (NER, rhetorical role, LJP, retrieval, summ, MT) | CC-BY-NC-ND-4.0 | https://huggingface.co/datasets/Exploration-Lab/IL-TUR |
+| LBOX Open | South Korea; Korean | Corpus + classification + LJP + summarization | Not confirmed | https://huggingface.co/datasets/lbox/lbox_open |
+| KBL | South Korea; Korean | Knowledge (510) + reasoning (288) + bar exam (2,510) | Not confirmed | https://github.com/lbox-kr/kbl |
+| ArabLegalEval | Saudi Arabia; Arabic | Multitask QA / entailment / classification | Not confirmed | https://aclanthology.org/2024.arabicnlp-1.20/ |
+| LegalAgentBench | China; Chinese | 300 agent tasks; 17 corpora; 37 tools; multi-hop | Not confirmed | https://github.com/CSHaitao/LegalAgentBench |
+| LexSumm / LexT5 | US/UK/EU/India; English | 8 English legal summarization datasets | Not confirmed | https://github.com/TUMLegalTech/LexSumm-LexT5 |
+| MLEB | US/UK/EU/AU/IE/SG; English | 10 datasets; retrieval + zero-shot classification + QA | Not confirmed | https://github.com/isaacus-dev/mleb |
+| TW-LegalBench | Taiwan; Traditional Chinese | MCQ across 6 legal domains | Apache-2.0 (HF card) | https://huggingface.co/datasets/lianghsun/tw-legal-benchmark-v1 |
+| BigLaw Bench (Harvey) | US (initially) | Real billable legal work (drafting, research, due diligence, litigation) | Partial (samples + rubrics on GitHub; full set on request) | https://www.harvey.ai/blog/introducing-biglaw-bench |
+| BigLaw Bench: Global (Harvey) | UK, Australia, Spain (+US) | BLB extended to more jurisdictions | Partial | https://www.harvey.ai/blog/introducing-big-law-bench-global |
+| BigLaw Bench: Research (Harvey) | US case law | Hard agentic US case-law research problems | Partial | https://www.harvey.ai/blog/introducing-big-law-bench-research |
+| Legal Agent Benchmark (LAB / HLAB) (Harvey) | US BigLaw practice areas | Long-horizon legal AGENT tasks (client-matter workflows) | Open-source (code fully open; portion of data open) | https://www.harvey.ai/blog/introducing-harveys-legal-agent-benchmark |
+| 2026 Contract Review Benchmark (LegalOn Technologies) | US-style English contracts | Provision-level contract review precision vs 11 LLMs | Proprietary (results + methodology only; no data/code) | https://www.legalontech.com/post/the-contract-review-benchmark-2026 |
+| MLEB (Massive Legal Embedding Benchmark) (Isaacus) | US/UK/EU/AU/IE/SG; English | Legal embedding/retrieval: search, zero-shot classification, QA | Fully open (code + data + arXiv) | https://isaacus.com/mleb |
+| Legal RAG Bench (Isaacus) | Victoria, Australia (criminal law) | End-to-end legal RAG w/ error decomposition (halluc/retrieval/reasoning) | Fully open (HF + arXiv) | https://isaacus.com/blog/legal-rag-bench |
+| Open Australian Legal Corpus / QA (Isaacus) | Australia; English | Corpus (229K texts, 1.4B tokens) + 2,124 synthesized QA pairs | Fully open (HF) | https://huggingface.co/datasets/isaacus/open-australian-legal-corpus |
+| Vals Legal AI Report (VLAIR) (Vals AI) | US; English | 7 legal tasks across vendor tools vs lawyer baseline | Report public; task data proprietary | https://www.vals.ai/industry-reports/vlair-2-27-25 |
+| Legal Research Bench (Vals AI) | US federal/state; English | Agentic legal research (case/web/doc retrieval -> synthesis) | Partial (public samples + harness; val/test gated) | https://www.vals.ai/benchmarks/legal_research |
+| CaseLaw v1/v2 (Vals AI (w/ Jurisage)) | US; English | Litigation precedent QA (family + criminal law) | Proprietary (results only; criticized as unreproducible) | https://www.vals.ai/benchmarks/case_law-04-11-2025 |
+| CoCoBench (Thomson Reuters / CoCounsel) | US; English | Fiduciary-grade legal task completion; longitudinal tracking | Closed / proprietary (described in blogs) | https://www.thomsonreuters.com/en-us/posts/innovation/why-legal-ai-needs-a-new-standard-inside-thomson-reuters-cocobench/ |
+| LegalRikai (Open Benchmark) (LegalOn Technologies) | Japan; Japanese | 4 tasks: complex Japanese corporate legal work (long-form doc editing) | Open (HF gated + arXiv; LREC 2026) | https://arxiv.org/abs/2512.11297 |
+| JudgmentBench (Snorkel AI + Stanford Law) | US; English | Rubric vs comparative(pairwise) judgment as eval methodology (on 30 BigLawBench tasks) | Open (methodology paper; check data terms) | https://arxiv.org/abs/2605.25240 |
+| PRBench-Legal (Scale AI) | US (47 jurisdictions); English | High-stakes professional legal reasoning; weighted rubric criteria | Open methodology + leaderboard (full items partial) | https://scale.com/research/prbench |
+| APEX (Big Law associate split) (Mercor) | US; English | Professional-work tasks; law is one of 4 domains | Mixed (paper open; heldout private) | https://arxiv.org/abs/2509.25721 |
+| AI IE + Contract Drafting Benchmarks (legalbenchmarks.ai (consortium)) | US in-house; English | Phase1: info extraction (6 tools); Phase2: contract drafting (14+ tools) | Open (CC-BY-4.0; data on request) | https://www.legalbenchmarks.ai/research/phase-1-research |
+| ContractIQ Bench (Luna) (Luminance) | Multi; English | Contract provision annotations to validate Luna/Luna Crescent model | Proprietary (not released) | https://www.luminance.com/resources/insights/the-era-of-vertical-ai-is-here-introducing-luna-crescent-luminances-proprietary-legal-intelligence-model/ |
+| State of Contracts clause benchmarks (Spellbook) | 30 countries; English | 270+ clause benchmarks across 13 agreement types | Proprietary (product/report) | https://www.spellbook.legal/blog/2026-state-of-contracts-report |
 
 
 ## Sources & Acknowledgments
